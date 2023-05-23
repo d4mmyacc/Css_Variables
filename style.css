@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* CSS variables can have a global or local scope.
+
+Global variables can be accessed/used through the entire document, while local variables can be used only inside the selector where it is declared.
+ */
+
+/* Global Variables*/
+:root{
+    --primary-text-color:#222;
+    --secondary-text-color:#444;
+    --card-background-color:#fff;
+    --background-color:#eee;
+    --deafault-margin:30px;
+}
+
+/* overide global variables */
+.dark{
+    --primary-text-color:#fff;
+    --secondary-text-color:#ddd;
+    --card-background-color:#333;
+    --background-color:#111;
+}
+
+.container{
+    padding: 40px;
+    /* --my-var:red; */
+    background-color: var(--background-color);
+    min-height: 100vh;
+
+}
+
+.box{
+    /* --my-var:yellow; */
+    padding: var(--deafault-margin);
+    /* background-color: var(--my-var); */
+    background-color: var(--card-background-color);
+    margin-block: var(--deafault-margin);
+    border-radius: var(--deafault-margin);
+}
+
+h1{
+    color: var(--primary-text-color);
+    text-align: center;
+   /*  background-color: var(--my-var, green)  fallback to green if --my-var not found*/
+}
+
+.box h2{
+    margin-bottom: var(--deafault-margin);
+    background-color: var(--my-var);
+    color: var(--primary-text-color);
+}
+
+p{
+    color: var(--secondary-text-color);
+}
+
+
+/* @media screen and (min-width:800px){
+    .container{
+        --my-var:pink;
+    }
+    
+} */
